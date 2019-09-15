@@ -10,14 +10,13 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
-import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
 @MappedSuperclass
 @Audited
 @EntityListeners(AuditingEntityListener.class)
-public abstract class AbstractAuditingEntity implements Serializable {
+public abstract class AbstractAuditingEntity implements IEntity {
 
     @CreatedBy
     @Column(name = "created_by", nullable = false, length = 50, updatable = false)
